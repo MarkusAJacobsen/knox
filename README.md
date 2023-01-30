@@ -3,7 +3,7 @@
 CLI utility to store and retrieve passwords/secrets without printing to terminal.
 
 ```
-Usage: knox [ARGS]... [COMMAND]
+Usage: knox [COMMAND]
 
 Commands:
   ls    List all stored secrets
