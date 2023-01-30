@@ -8,11 +8,8 @@ Usage: knox [ARGS]... [COMMAND]
 Commands:
   ls    List all stored secrets
   new   Create a new secret
-  get   Get a secret and store in copy-buffer
+  get   Get a secret and store in clipboard
   help  Print this message or the help of the given subcommand(s)
-
-Arguments:
-  [ARGS]...  
 
 Options:
   -h, --help     Print help

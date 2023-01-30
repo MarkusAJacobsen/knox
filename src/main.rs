@@ -15,7 +15,6 @@ use crate::file_helpers::get_vault_path_string;
 struct Cli {
     #[command(subcommand)]
     commands: Option<Commands>,
-    args: Vec<String>,
 }
 
 #[derive(Subcommand)]
@@ -27,7 +26,7 @@ enum Commands {
         #[arg(short, long)]
         name: String
     },
-    /// Get a secret and store in copy-buffer
+    /// Get a secret and store in clipboard
     Get {
         #[arg(short, long)]
         name: String
