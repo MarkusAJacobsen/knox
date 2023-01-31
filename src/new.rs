@@ -13,7 +13,7 @@ pub(crate) fn new(name: &String) {
 
     let vim_command = "vim ".to_owned() + dir_name + "/" + name + ".txt";
 
-    std::process::Command::new("/usr/bin/sh")
+    std::process::Command::new("/bin/sh")
         .arg("-c")
         .arg(vim_command)
         .spawn()
