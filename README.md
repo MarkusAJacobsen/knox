@@ -16,3 +16,18 @@ Options:
   -V, --version  Print version
 
 ```
+
+## Compatibility
+Currently only tested on Linux.
+
+### **Requirements**
+
+The current implementation spawns a Vim instance on the `new` command.
+
+### Install
+Compile from source
+```
+git clone git@github.com:MarkusAJacobsen/knox.git
+cd knox
+cargo install --path .
+```
