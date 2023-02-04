@@ -18,7 +18,7 @@ Options:
 ```
 
 ## Compatibility
-Currently only tested on Linux.
+Currently tested on Linux and MacOS.
 
 ### **Requirements**
 
