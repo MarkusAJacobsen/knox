@@ -4,6 +4,8 @@ mod new;
 mod ls;
 mod file_helpers;
 mod get;
+mod edit;
+mod rm;
 
 use std::fs;
 use std::path::Path;
@@ -26,11 +28,21 @@ enum Commands {
         #[arg(short, long)]
         name: String
     },
+    /// Edit a secret
+    Edit {
+        #[arg(short, long)]
+        name: String
+    },
     /// Get a secret and store in clipboard
     Get {
         #[arg(short, long)]
         name: String
     },
+    /// Delete a secret
+    Rm {
+        #[arg(short, long)]
+        name: String
+    }
 }
 
 fn main() {
@@ -45,8 +57,14 @@ fn main() {
         Some(Commands::New {name }) => {
             new::new(name);
         }
+        Some(Commands::Edit {name}) => {
+            edit::edit(name);
+        }
         Some(Commands::Get {name }) => {
             get::get(name);
+        }
+        Some(Commands::Rm {name }) => {
+            rm::rm(name);
         }
         None => {}
     }
