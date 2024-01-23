@@ -26,7 +26,9 @@ enum Commands {
     /// Create a new secret
     New {
         #[arg(short, long)]
-        name: String
+        name: String,
+        #[arg(short, long, default_value_t = false)]
+        generated: bool
     },
     /// Edit a secret
     Edit {
@@ -54,8 +56,8 @@ fn main() {
         Some(Commands::Ls ) => {
             ls::ls();
         }
-        Some(Commands::New {name }) => {
-            new::new(name);
+        Some(Commands::New {name, generated }) => {
+            new::new(name, generated);
         }
         Some(Commands::Edit {name}) => {
             edit::edit(name);
