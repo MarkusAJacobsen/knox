@@ -5,7 +5,7 @@ use crate::file_helpers::get_vault_path_string;
 use ansi_term::Colour::{Yellow};
 
 pub(crate) fn ls () {
-    println!("{}", Yellow.underline().paint("Stored secrets:"));
+    println!("{}", Yellow.underline().paint("Stored entries:"));
 
     let dir_string = get_vault_path_string();
     let entries: ReadDir;

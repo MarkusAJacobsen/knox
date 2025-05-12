@@ -6,6 +6,7 @@ mod file_helpers;
 mod get;
 mod edit;
 mod rm;
+mod fuzzy_suggestions;
 
 use std::fs;
 use std::path::Path;

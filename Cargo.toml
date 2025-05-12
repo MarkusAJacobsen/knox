@@ -1,6 +1,6 @@
 [package]
 name = "knox"
-version = "0.1.4"
+version = "0.1.5"
 edition = "2021"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
@@ -11,3 +11,4 @@ clap = { version = "4.5.38", features = ["derive"]}
 copypasta-ext = "0.4.4"
 dirs = { version = "6.0.0" }
 uuid = { version = "1.16.0", features = ["v4", "fast-rng", "macro-diagnostics"] }
+strsim = "0.11.1"

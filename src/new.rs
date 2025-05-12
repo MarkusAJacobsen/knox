@@ -10,14 +10,14 @@ pub(crate) fn new(name: &String, generate: &bool) {
     let file_path_as_string = format!("{}/{}.txt", dir_name, name);
 
     if Path::exists(file_path_as_string.as_ref()) {
-        println!("Secret '{}' already exists.", name);
+        println!("Entry '{}' already exists.", name);
         return;
     }
 
     if *generate == true {
         let _ok = match generate_uuid_secret_in_file(file_path_as_string) {
             Ok(_ok) => return,
-            Err(error) => panic!("Could not generate new secret: {:?}", error),
+            Err(error) => panic!("Could not generate new entry: {:?}", error),
         };
     }
 

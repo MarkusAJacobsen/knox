@@ -1,5 +1,6 @@
 use std::path::Path;
 use crate::file_helpers::get_vault_path_string;
+use crate::fuzzy_suggestions::get_fuzzy_suggestions;
 
 pub(crate) fn edit(name: &String) {
     let dir_name = & get_vault_path_string();
@@ -10,7 +11,18 @@ pub(crate) fn edit(name: &String) {
         println!("Entry '{}' does not exist.", name);
         println!();
         println!("Create this by running 'knox new -n {}'", name);
-        return;
+
+        let fuzzy_suggestions = get_fuzzy_suggestions(name);
+        match fuzzy_suggestions {
+            Some(fuzzy_suggestions) => {
+                println!("Or perhaps you meant one of these:");
+                for suggestion in fuzzy_suggestions {
+                    println!("\t{}", suggestion)
+                }
+                return
+            }
+            None => return
+        }
     }
 
     let vim_command = "vim ".to_owned() + dir_name + "/" + name + ".txt";
