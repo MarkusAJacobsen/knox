@@ -23,8 +23,10 @@ pub(crate) fn get(name: &str) {
                 }
             }
         },
-        Err(err) => {
-            println!("File {} not found. Err: {}", name, err.to_string());
+        Err(_err) => {
+            println!("Entry '{}' does not exist.", name);
+            println!();
+            println!("Create this by running 'knox new -n {}'", name)
         }
     }
 }

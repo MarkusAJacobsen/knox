@@ -7,8 +7,8 @@ pub(crate) fn rm(name: &str) {
 
     let result = std::fs::remove_file(file_path_as_string);
     match result {
-        Err(err) => {
-            println!("File {} not found. Err: {}", name, err.to_string());
+        Err(_err) => {
+            println!("Entry '{}' does not exist.", name);
         }
         _ => {}
     }

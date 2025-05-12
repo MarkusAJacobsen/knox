@@ -7,7 +7,9 @@ pub(crate) fn edit(name: &String) {
     let file_path_as_string = format!("{}/{}.txt", dir_name, name);
 
     if !Path::exists(file_path_as_string.as_ref()) {
-        println!("Secret '{}' does not exist.", name);
+        println!("Entry '{}' does not exist.", name);
+        println!();
+        println!("Create this by running 'knox new -n {}'", name);
         return;
     }
 
